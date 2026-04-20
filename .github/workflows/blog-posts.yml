@@ -1,0 +1,19 @@
+name: Latest Blog Posts
+on:
+  schedule:
+    # 매주 월요일 00:00 (UTC 기준)에 실행
+    - cron: '0 0 * * 1'
+  workflow_dispatch: # 수동으로도 실행 가능하게 설정
+
+jobs:
+  update-readme-with-blog:
+    name: Update this repo's README with latest blog posts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Pull in blog posts
+        uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          feed_list: "https://jiwon-study.tistory.com/rss"
+          max_post_count: 5
