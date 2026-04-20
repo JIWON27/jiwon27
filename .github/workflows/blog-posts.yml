@@ -13,9 +13,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Run blog script
-        run: python3 ./blog.py
-
       - name: Pull in blog posts
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
