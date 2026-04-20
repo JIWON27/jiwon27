@@ -12,8 +12,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Run blog script
+        run: python3 ./blog.py
+
       - name: Pull in blog posts
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
-          feed_list: "https://api.allorigins.win/raw?url=https://jiwon-study.tistory.com/rss"
+          feed_list: "https://jiwon-study.tistory.com/rss"
           max_post_count: 5
+          user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+          accept_header: "application/rss+xml, application/xml, text/xml, */*"
