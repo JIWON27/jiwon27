@@ -15,5 +15,5 @@ jobs:
       - name: Pull in blog posts
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
-          feed_list: "https://api.rss2json.com/v1/api.json?rss_url=https://jiwon-study.tistory.com/rss"
+          feed_list: "https://api.allorigins.win/raw?url=https://jiwon-study.tistory.com/rss"
           max_post_count: 5
